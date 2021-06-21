@@ -1,0 +1,56 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="row">
+    <h1 class="title">Currency Exchange</h1>
+    <h3 class="title">{{ date }}</h3>
+</div>
+<div class="row">
+    {% for currency in data %}
+        <div class="exhange-card col-md-3" id="{{ currency.abv }}">
+            <div class="card-header">
+                <button align="right" id-"cancel" class="close cancel">X</button>
+            </div>
+            <div class="card-content">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{{ currency.flag_link }}" alt="FLAG" height="35px" width="60px">
+                        </td>
+                        <td style="min-width:45px;text-align:center;">
+                            <span class="currency-symbol">{{ currency.symbol }}</span>
+                        </td>
+                        <td>
+                            <input class="currency-input" type="number" align="right"/>
+                        </td>
+                    </tr>
+                                
+                    <tr>
+                        <td/>
+                        <td/>
+                        <td>
+                            <span id="currency-abv">{{ currency.abv }}</span>
+                            -
+                            <span id="currency-name">{{ currency.name }}</span>
+                        </td>
+                    </div>
+                    <tr>
+                        <td/>
+                        <td/>
+                        <td style='display:none'>
+                            1<span id="exchange_base"></span>
+                            =
+                            <span id="exchange_value"></span>
+                            <span id="currency-name">{{ currency.abv }}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    {% endfor%}
+</div>
+<div class="row custom-footer">
+    <button class="btn btn-success" id="btn_add_currency">Add Currency</button>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My Django Application</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/currency_card.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body>
+<div class="custom-container">
+{% block content %}{% endblock %}
+</div>
+<div class="modal" id="add_currency_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body archived_list" id="add_currency_list">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" id="btn_activate_currencies">Add Currency</buttno>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+    <script src="{% static 'app/scripts/card.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
