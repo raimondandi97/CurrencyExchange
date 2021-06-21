@@ -1,1 +1,10 @@
 django~=2.2
+ 
+To open app:
+Visual Studio with python development
+for django web application
+
+configuration:
+-create new environment in Pyton Environments
+-install requests
+-install django (if needed);
